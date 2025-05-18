@@ -1,36 +1,90 @@
-
+<!-- index.html - Trang "GIAO DIỆN TỔNG THỂ CDG" -->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CDG Agency - Chọn Giao Diện</title>
+  <title>GIAO DIỆN TỔNG THỂ CDG</title>
   <style>
-    body { font-family: sans-serif; padding: 40px; text-align: center; background: #f5f5f5; }
-    h1 { margin-bottom: 40px; }
+    :root {
+      --primary-bg: #f5f5f5;
+      --primary-text: #111;
+      --accent-color: #007bff;
+    }
+    body { font-family: sans-serif; margin: 0; padding: 0; background: var(--primary-bg); }
+    header { background: var(--primary-text); color: #fff; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; font-size: 24px; }
+    nav { display: flex; gap: 20px; align-items: center; }
+    nav a, nav button, .lang-select, .color-select { background: #fff; color: var(--primary-text); padding: 8px 12px; border: none; border-radius: 6px; text-decoration: none; font-size: 14px; cursor: pointer; }
+    .container { padding: 40px; text-align: center; }
     .themes { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
     .theme-box { background: #fff; border-radius: 10px; padding: 20px; width: 300px; box-shadow: 0 0 10px #ccc; }
     .theme-box img { width: 100%; border-radius: 6px; }
     .theme-box h2 { margin-top: 15px; }
     .theme-box p { font-size: 14px; color: #555; }
-    .theme-box a { display: inline-block; margin-top: 10px; background: #111; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; }
+    .theme-box a { display: inline-block; margin-top: 10px; background: var(--primary-text); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; }
+    .search-box { margin-right: 10px; }
+    .search-box input { padding: 6px 10px; border-radius: 4px; border: 1px solid #ccc; }
+    footer { background: var(--primary-text); color: #fff; padding: 20px; text-align: center; margin-top: 40px; }
+    .socials a { color: #fff; margin: 0 10px; font-size: 18px; text-decoration: none; }
   </style>
+  <script>
+    function switchLanguage(lang) {
+      alert("Chuyển sang " + (lang === 'en' ? 'English' : 'Tiếng Việt'));
+    }
+
+    function changeColor(color) {
+      document.documentElement.style.setProperty('--primary-bg', color);
+    }
+  </script>
 </head>
 <body>
-  <h1>🎨 CDG AGENCY – Chọn Giao Diện</h1>
-  <div class="themes">
-    <div class="theme-box">
-      <img src="https://via.placeholder.com/300x180?text=Freepik+Style" alt="Freepik Style"/>
-      <h2>Library Style</h2>
-      <p>Giao diện hiện đại, thư viện sản phẩm sáng rõ.</p>
-      <a href="themes/freepik/index.html">Xem giao diện</a>
-    </div>
-    <div class="theme-box">
-      <img src="https://via.placeholder.com/300x180?text=Pinterest+Style" alt="Pinterest Style"/>
-      <h2>Masonry Layout</h2>
-      <p>Giao diện dạng Masonry layout truyền cảm hứng.</p>
-      <a href="themes/pinterest/index.html">Xem giao diện</a>
+  <header>
+    <h1>🎨 GIAO DIỆN TỔNG THỂ CDG</h1>
+    <nav>
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm...">
+      </div>
+      <a href="#">Tin tức</a>
+      <a href="#">Đăng nhập</a>
+      <button onclick="alert('Chuyển giao diện!')">🔄 Đổi giao diện</button>
+      <select class="lang-select" onchange="switchLanguage(this.value)">
+        <option value="vi">🇻🇳 Tiếng Việt</option>
+        <option value="en">🇬🇧 English</option>
+      </select>
+      <select class="color-select" onchange="changeColor(this.value)">
+        <option value="#f5f5f5">🎨 Gốc</option>
+        <option value="#ffffff">🌤 Trắng</option>
+        <option value="#e0f7fa">💙 Xanh nhạt</option>
+        <option value="#fff3e0">🧡 Cam nhạt</option>
+        <option value="#fce4ec">🌸 Hồng nhạt</option>
+      </select>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="themes">
+      <div class="theme-box">
+        <img src="https://via.placeholder.com/300x180?text=Freepik+Style" alt="Freepik Style"/>
+        <h2>Freepik Style</h2>
+        <p>Giao diện hiện đại, thư viện sản phẩm sáng rõ.</p>
+        <a href="themes/freepik/index.html">Xem giao diện</a>
+      </div>
+      <div class="theme-box">
+        <img src="https://via.placeholder.com/300x180?text=Pinterest+Style" alt="Pinterest Style"/>
+        <h2>Pinterest Style</h2>
+        <p>Giao diện dạng Masonry layout truyền cảm hứng.</p>
+        <a href="themes/pinterest/index.html">Xem giao diện</a>
+      </div>
     </div>
   </div>
+  <footer>
+    <p>Kết nối với chúng tôi:</p>
+    <div class="socials">
+      <a href="#" title="Facebook">🌐 Facebook</a>
+      <a href="#" title="Instagram">📷 Instagram</a>
+      <a href="#" title="YouTube">▶️ YouTube</a>
+      <a href="#" title="LinkedIn">💼 LinkedIn</a>
+    </div>
+  </footer>
 </body>
 </html>
