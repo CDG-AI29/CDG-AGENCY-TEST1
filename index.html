@@ -12,10 +12,16 @@
       --accent-color: #007bff;
     }
     body { font-family: sans-serif; margin: 0; padding: 0; background: var(--primary-bg); }
-    header { background: var(--primary-text); color: #fff; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+    header { background: var(--primary-text); color: #fff; padding: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
     header h1 { margin: 0; font-size: 24px; }
-    nav { display: flex; gap: 20px; align-items: center; }
+    nav { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
     nav a, nav button, .lang-select, .color-select { background: #fff; color: var(--primary-text); padding: 8px 12px; border: none; border-radius: 6px; text-decoration: none; font-size: 14px; cursor: pointer; }
+    .search-box { margin-right: 10px; }
+    .search-box input { padding: 6px 10px; border-radius: 4px; border: 1px solid #ccc; }
+    .slider { overflow-x: auto; white-space: nowrap; padding: 20px; margin-top: 20px; }
+    .slide-item { display: inline-block; width: 250px; margin-right: 20px; background: #fff; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1); text-align: center; }
+    .slide-item img { width: 100%; border-radius: 10px 10px 0 0; }
+    .slide-item h3 { padding: 10px; margin: 0; font-size: 16px; }
     .container { padding: 40px; text-align: center; }
     .themes { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
     .theme-box { background: #fff; border-radius: 10px; padding: 20px; width: 300px; box-shadow: 0 0 10px #ccc; }
@@ -23,8 +29,6 @@
     .theme-box h2 { margin-top: 15px; }
     .theme-box p { font-size: 14px; color: #555; }
     .theme-box a { display: inline-block; margin-top: 10px; background: var(--primary-text); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; }
-    .search-box { margin-right: 10px; }
-    .search-box input { padding: 6px 10px; border-radius: 4px; border: 1px solid #ccc; }
     footer { background: var(--primary-text); color: #fff; padding: 20px; text-align: center; margin-top: 40px; }
     .socials a { color: #fff; margin: 0 10px; font-size: 18px; text-decoration: none; }
   </style>
@@ -61,6 +65,27 @@
       </select>
     </nav>
   </header>
+
+  <!-- Slider ngang -->
+  <div class="slider">
+    <div class="slide-item">
+      <img src="https://picsum.photos/250/150?random=1" alt="Slide 1">
+      <h3>Thiết kế nổi bật</h3>
+    </div>
+    <div class="slide-item">
+      <img src="https://picsum.photos/250/150?random=2" alt="Slide 2">
+      <h3>Mẫu sáng tạo</h3>
+    </div>
+    <div class="slide-item">
+      <img src="https://picsum.photos/250/150?random=3" alt="Slide 3">
+      <h3>Phong cách tối giản</h3>
+    </div>
+    <div class="slide-item">
+      <img src="https://picsum.photos/250/150?random=4" alt="Slide 4">
+      <h3>Thương hiệu mạnh</h3>
+    </div>
+  </div>
+
   <div class="container">
     <div class="themes">
       <div class="theme-box">
@@ -76,7 +101,29 @@
         <a href="themes/pinterest/index.html">Xem giao diện</a>
       </div>
     </div>
+
+  <!-- Tin tức theo nhãn -->
+  <div class="container">
+    <h2 style="text-align:center; margin-bottom: 20px;">📰 Tin tức & Bài viết mới</h2>
+    <div class="themes">
+      <div class="theme-box">
+        <h3>[Thiết kế Logo]</h3>
+        <p><strong>Bài viết:</strong> Cách xây dựng nhận diện thương hiệu hiệu quả với logo đơn giản.</p>
+        <a href="#">Đọc thêm</a>
+      </div>
+      <div class="theme-box">
+        <h3>[Thiết kế Bao bì]</h3>
+        <p><strong>Bài viết:</strong> Xu hướng bao bì năm 2025: Tối giản nhưng đầy cảm xúc.</p>
+        <a href="#">Đọc thêm</a>
+      </div>
+      <div class="theme-box">
+        <h3>[Motion Graphic]</h3>
+        <p><strong>Bài viết:</strong> Làm chủ chuyển động thương hiệu với 2D animation.</p>
+        <a href="#">Đọc thêm</a>
+      </div>
+    </div>
   </div>
+
   <footer>
     <p>Kết nối với chúng tôi:</p>
     <div class="socials">
