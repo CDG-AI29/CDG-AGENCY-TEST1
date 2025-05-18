@@ -1,0 +1,6 @@
+
+body { font-family: sans-serif; margin: 0; padding: 20px; background: #fff; }
+.gallery { padding: 20px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.item { border: 1px solid #ddd; padding: 10px; text-align: center; }
+img { width: 100%; border-radius: 4px; }
